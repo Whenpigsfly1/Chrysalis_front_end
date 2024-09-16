@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
+    <!--<script src="{{url_for('static', filename='t_create.js')}}"></script>-->
+</head>
+<body>
+    <form autocomplete="exioff" method="POST" action="">
+    <center>
+        <H1>Add video</H1> <br>
+        Video URL <input type = "text" name= "url" id="url"/>
+        <br>
+        Video Name <input type = "text" name= "name" id="name"/> 
+        <br>
+        Video Tag  <select name="tag" id="tag">
+            <option value="Science">Science</option>
+            <option value="Technology">Technology</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Mathematics">Mathematics</option>
+          </select> <br>
+        <br>
+        <input type = "submit">
+    </center>
+</form>
+</body>
+</html>

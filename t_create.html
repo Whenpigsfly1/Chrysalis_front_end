@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
+    <!--<script src="{{url_for('static', filename='t_create.js')}}"></script>-->
+</head>
+<body>
+    <form autocomplete="off" method="POST" action="">
+    <center>
+        <H1>Create Teacher Account</H1> <br>
+        <div class="autocomplete">
+            School Name <input type = "text" name= "school" id="school"/>
+        </div>
+        <br>
+        Username <input type = "text" name= "username"/> <br>
+        Password&nbsp;&nbsp;<input type = "password" name = "password" /> <br>
+        <input type = "submit">
+    </center>
+    <br>
+    <br>
+    <center>
+        <a href="{{ url_for('t_login') }}">Login</a>
+    </center>
+</form>
+</body>
+</html>

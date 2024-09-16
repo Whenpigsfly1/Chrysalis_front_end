@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+    <script src="{{url_for('static', filename='videos.js')}}"></script>
+</head>
+
+<body>
+    <h1>Worksheet 1: "Gastropods in Backyards - Introduction and Identification"</h1>
+    <p>Objective: Introduce students to the basic concepts of gastropods and their characteristics.</p>
+    <p>Instructions: Watch the "Backyard Science - Gastropods" video and fill in the blanks:</p>
+    
+    <form method="POST" action="">
+        <label for="mollusks">Gastropods are part of the mollusk family, which includes the following three species:</label>
+        <input type="text" id="mollusks" name="mollusks"><br><br>
+
+        <label for="shelter">During summer months, snails and slugs are likely hiding under the following three places:</label>
+        <input type="text" id="shelter" name="shelter"><br><br>
+        
+        <label for="layer">Slugs move with a foot that uses muscular contractions to navigate terrain, and a layer of what protects them and is easily visible?</label>
+        <input type="text" id="layer" name="layer"><br><br>
+
+        <input type="submit">
+      </form> 
+
+    <p>Identification Challenge:</p>
+    <p>Create a list of gastropod characteristics mentioned in the video.</p>
+    <p>Challenge students to identify and list three gastropods commonly found in their local environment (backyard, park, etc.).</p>
+    <p>Encourage them to use online resources or field guides to aid in identification.</p>
+</body>

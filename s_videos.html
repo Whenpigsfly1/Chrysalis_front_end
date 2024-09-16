@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+    <script src="{{url_for('static', filename='videos.js')}}"></script>
+</head>
+<body>
+    <center>
+        <p id="test" style ="display: none;">Test paragraph</p>
+        <br>
+    </center>
+    <center>
+        <H1> Assigned videos</H1> <br>
+        {% for element in unfinished_video_filenames %}
+            <p>Video {{ element[1] }}</p>
+            <video width="320" height="240" controls class="video" id="video{{element[1]}}">
+                <source src="/static/{{element[2]}}" type="video/mp4">
+                Your browser does not support the video tag.
+             </video>
+             <br>
+             <div class="questions" style="display:none">
+                <form method="POST" action="">
+                    <center>
+                       
+                        <label for="video">Video Number:</label>
+                        <input type="text" name="video" value="{{element[1]}}" readonly/>
+                        <br>
+
+                        <label for="q1">Question 1:</label><br>
+                        <input type="radio" name="q1" value="Option A">Option A<br>
+                        <input type="radio" name="q1" value="Option B">Option B<br>
+                        <input type="radio" name="q1" value="Option C">Option C<br>
+
+                        <label for="q2">Question 2:</label><br>
+                        <input type="radio" name="q2" value="Option D">Option D<br>
+                        <input type="radio" name="q2" value="Option E">Option E<br>
+                        <input type="radio" name="q2" value="Option F">Option F<br>
+
+                        <label for="q3">Question 3:</label><br>
+                        <input type="radio" name="q3" value="Option G">Option G<br>
+                        <input type="radio" name="q3" value="Option H">Option H<br>
+                        <input type="radio" name="q3" value="Option I">Option I<br>
+
+                        Notes:
+                        <input type="text" name ="notes" value="test"/>
+                        <br>
+                    
+                        <input type = "submit">
+                        </center>
+                </form>
+                
+             </div>
+        {% endfor %}
+    </center>
+
+    <center>
+        <H1> All videos</H1> <br>
+    </center>
+
+   
+        <h3>Video 1</h3>
+        <video width="320" height="240" controls class="video">
+            <source src={{ url_for('static', filename="life.mp4") }} type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+
+        <h3>Video 2</h3>
+        <video width="320" height="240" controls class="video">
+            <source src={{ url_for('static', filename="cells.mp4") }} type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        
+        <h3>Video 3</h3>
+        <video width="320" height="240" controls class="video">
+            <source src={{ url_for('static', filename="dehydrogenase.mp4") }} type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <h3>Video 4</h3>
+        <video width="320" height="240" controls class="video">
+            <source src={{ url_for('static', filename="secretase.mp4") }} type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        
+
+
+        <!--<p>Episode 1: Maintain the Crown (mLab | Black Panther Series):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=bmTKBiGQi-U" >
+                Your browser does not support the video tag.
+            </video>
+    
+       
+       
+            <p>Episode 2: It's Hard for a Good Man to Be King (mLab | Black Panther Series):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=QfuoGtFP75s" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 3: The Revolution Will Not be Televised (mLab | Black Panther Series):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=UkjcHbWwspk" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 4: Kimoyo Beads (mLab Build | Avengers Series):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=akQj5XXHsCU" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 5: Eye of Agamotto (mLab Build | Avengers Series):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=w9lkp48tRt4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 6: What's Up Danger (mLab | Into the Spider-verse):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=tsloAeB3DWU:" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 7: General Mayhem Shortbread Cookies (LEGO Movie 2):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=q7ivkYVePyg" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 8: Captain Marvel Power Gauntlet (mLab | Captain Marvel):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=AlA74lhjvQE" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 9: Avengers Endgame Anulax Battery (mLab | Avengers:Endgame):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=T9sPPyM2xDQ" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 10: Lion King Nala’s Mask (mLab | Lion King):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=Esmr4O8d5ow&t=45s" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 11: Inter-Stellar TESSERAE Planter (mLab | NASA) | Instructables Version:</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=Jz7hpGbkCGA" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 12: Maleficent Caramel Apple (mLab | Halloween):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=PiDtJqJdreE" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>Episode 13: Star Wars Holiday Special (mLab | Star Wars Rise of Skywalker):</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=NtoxGZP4PGA" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <p>The Internet of Things:</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.youtube.com/watch?v=32QsJDeNISs" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>-->
+       
+
+
+    <br>
+    <br>
+   
+    <center>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </center>
+</body>
+</html>

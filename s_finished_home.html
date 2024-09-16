@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>s_home</title>
+</head>
+<body>
+    
+<!--
+    <form method="POST" action="">
+        <center>
+            <H1> Assigned videos</H1> <br>
+            <label for="selected_video">Go to:</label>
+            <br>
+              {% for row in unfinished_video_filenames %}
+              Video <input type="button" value={{row[1]}}>
+              <br>
+              {% endfor %}
+            </select> <br>
+        </center>
+        <br>
+        <br>
+    </form>
+
+
+  <center>
+        <H1> Assigned videos</H1> <br>
+
+        {% for element in unfinished_video_filenames %}
+            <a href="/video{{element[1]}}">Video {{element[1]}}</a>
+             <br>
+             <div class="questions" style="display:none"> 
+             </div>
+        {% endfor %}
+
+    </center>
+
+-->
+    <center>
+        <H1> Assigned videos</H1> <br>
+    
+        No assigned videos for now!
+    </center>
+    <br>
+
+    <br>
+    <br>
+    <center>
+        <a href="{{ url_for('s_all_videos') }}">View all videos</a>
+    </center>
+    <br>
+    <br>
+    <center>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </center>
+</body>
+</html>

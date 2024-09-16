@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+</head>
+<body>
+    <center>
+        <H1>Welcome {{ teacher_username }}!</H1> <br>
+    </center>
+    <center>
+        <h3>My students</h3>
+        
+        <table>
+            <thead>
+            </thead>    
+              <tbody>
+               {% for row in Students %}    
+                      <tr>
+                          <td><center>{{row[0]}}</center></td>
+                          
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+
+        </center>
+       
+    
+        <center>
+        <br>
+
+        <form method="POST" action="">
+            <label for="student">View details for:</label>
+            <select name="student" id="student">
+            {% for row in Students %}  
+            <option value='{{row[0]}}'>{{row[0]}}</option>
+            {% endfor %}
+            </select>
+            <input type ="submit">
+        </form>
+        <br>
+        
+        </center>
+
+      
+
+
+        <center>
+            <a href="{{ url_for('assign_to_all') }}">Assign to all students</a>
+            <br>
+            <br>
+            <a href="{{ url_for('add_student', teacher ='hi') }}">Create New Student Account</a>
+            <br>
+            <br>
+            <a href="{{ url_for('delete_student') }}">Delete Student Account</a>
+            <br>
+            <br>
+            <center>
+                <a href="{{ url_for('t_all_videos') }}">View all videos</a>
+            </center>
+            <br>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </center>
+
+   
+  
+        <!-- <form>
+            {% for row in Students %}   
+            <label for="student_username">{{row[0]}}</label>
+            <input type="button" value="{{row[0]}}">
+            <br>
+            {% endfor %}
+        </form>-->
+
+
+    <!--  <table>
+            <thead>
+            </thead>    
+              <tbody>
+               {% for row in Students %}    
+                      <tr>
+                          <td><center><a href="{{ url_for('t_student_layout') }}">{{row[0]}}</a></center></td>
+                          <td><center><a href="{{ url_for('t_student_layout') }}">View details</a></center></td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>-->
+</body>
+</html>

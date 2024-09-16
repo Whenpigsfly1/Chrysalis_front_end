@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+</head>
+<body>
+    <form method="POST" action="">
+    <center>
+        <H1>Find School</H1> <br>
+        <label for="select_school">Select School:</label>
+        <select name="select_school" id="select_school">
+             {% for row in schools %}    
+                <option value="{{row[0]}}">{{row[0]}}</option>
+             {% endfor %}
+        </select> 
+        <br>
+        <input type = "submit">
+    </center>
+    </form>
+    <div class="create">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
+
+

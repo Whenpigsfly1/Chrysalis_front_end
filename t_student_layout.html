@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+</head>
+<body>
+    <center>
+        <H1>{{ student }}</H1> <br>
+    </center>
+    <center>
+        <h3>Assigned videos</h3>
+        <table>
+            <!--<thead>
+              <tr>
+                <td><center>Video name</center></td>
+              </tr>
+            </thead>  -->  
+            <tbody>
+            {% for row in unfinished_videos %}    
+              <tr>
+                  <td><center>Video {{row[0]}}</center></td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </center>
+        <center>
+            <h3>Finished videos</h3>
+            <table>
+                <thead>
+                  <tr>
+                    <td><center>Video name</center></td>
+                    <td><center>Q1 Submission</center></td>
+                    <td><center>Q2 Submission</center></td>
+                    <td><center>Q3 Submission</center></td>
+                    <td><center>Notes</center></td>
+                    <td><center>Timestamp</center></td>
+                  </tr>
+                  </thead>  
+                  <tbody>
+                  {% for row in finished_videos %}    
+                  <tr>
+                      <td><center>Video {{row[0]}}</center></td>
+                      <td><center>{{row[1]}}</center></td>
+                      <td><center>{{row[2]}}</center></td>
+                      <td><center>{{row[3]}}</center></td>
+                      <td><center>{{row[4]}}</center></td>
+                      <td><center>{{row[5]}}</center></td>
+
+                  </tr>
+                  {% endfor %}
+                  </tbody>
+              </table>
+            </center>
+        <center>
+          <a href="{{ url_for('assign_video') }}">Assign video</a>
+        </center>
+
+    <br>
+    <br>
+   
+    <center>
+        <a href="{{ url_for('exit_student') }}">All students</a>
+        <br>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </center>
+</body>
+</html>

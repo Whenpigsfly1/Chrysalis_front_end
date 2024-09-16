@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+</head>
+<body>
+    <form method="POST" action="">
+    <center>
+        <H1>Teacher Login - {{ school }}</H1> <br>
+        Username <input type = "text" name= "username"/> <br>
+        Password&nbsp;&nbsp;<input type = "password" name = "password" /> <br>
+        <input type = "submit">
+    </center>
+    </form>
+    <br>
+    <br>
+    
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="bottom">
+    <center>
+        
+    </center>
+    <center>
+        <a href="{{ url_for('t_create') }}">Create account</a>
+    </center>
+    </div>
+
+</body>
+</html>

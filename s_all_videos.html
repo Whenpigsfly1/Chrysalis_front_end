@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+    <script src="{{url_for('static', filename='videos.js')}}"></script>
+</head>
+
+<body>
+
+<center>
+    <H1> All videos</H1> <br>
+</center>
+
+<center>
+  <H1> All videos</H1> <br>
+</center>
+
+<h2>Biology</h2>
+{% for element in biology %}
+
+Video {{element[0]}}
+<br>
+<video width="320" height="240" controls class="video" id="video">
+<source src="/static/{{element[1]}}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<br>
+<br>
+{% endfor %}
+
+<h2>Earth science</h2>
+{% for element in earth_science %}
+Video {{element[0]}}
+<br>
+<video width="320" height="240" controls class="video" id="video">
+<source src="/static/{{element[1]}}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<br>
+<br>
+{% endfor %}
+
+<h2>Technology</h2>  
+{% for element in technology %}
+Video {{element[0]}}
+<br>
+<video width="320" height="240" controls class="video" id="video">
+<source src="/static/{{element[1]}}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<br>
+<br>
+{% endfor %}
+
+<h2>Math</h2>
+{% for element in math %}
+Video {{element[0]}}
+<br>
+<video width="320" height="240" controls class="video" id="video">
+<source src="/static/{{element[1]}}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<br>
+<br>
+{% endfor %}
+<center>
+  <a href="{{ url_for('s_home') }}">Back to assigned videos</a>
+</center>
+
+<center>
+  <a href="{{ url_for('logout') }}">Logout</a>
+</center>
+
+<!--<h1>All</h1>
+ 
+    <h3>Video 1</h3>
+    <video width="320" height="240" controls class="video">
+        <source src={{ url_for('static', filename="life.mp4") }} type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+
+    <h3>Video 2</h3>
+    <video width="320" height="240" controls class="video">
+        <source src={{ url_for('static', filename="cells.mp4") }} type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    
+    <h3>Video 3</h3>
+    <video width="320" height="240" controls class="video">
+        <source src={{ url_for('static', filename="dehydrogenase.mp4") }} type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h3>Video 4</h3>
+    <video width="320" height="240" controls class="video">
+        <source src={{ url_for('static', filename="secretase.mp4") }} type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  -->
+</body>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+</head>
+<body>
+    <form method="POST" action="">
+    <center>
+        <H1>Create Student Account - {{ school }}</H1> <br>
+        <p>Note: When making an account, please use the username provided by your teacher. If you do not have a teacher-provided username, please ask you teacher to make an account for you through the teacher portal.</p>
+        <label for="teacher">Teacher:</label>
+        <select name="teacher" id="teacher">
+             {% for row in teachers %}    
+                <option value={{ row[0] }}>{{ row[0] }}</option>
+             {% endfor %}
+        </select><br>
+        <label for="username">Username:</label>
+        <input type = "text" name= "username"/> <br>
+        <label for="password">Password:</label>
+        <input type = "password" name = "password" /> <br>
+        <input type = "submit">
+    </center>
+    <br>
+    {% block content %}
+    {% endblock %}
+    <br>
+    <center>
+        <a href="{{ url_for('s_login') }}">Login</a>
+    </center>
+</form>
+</body>
+</html>

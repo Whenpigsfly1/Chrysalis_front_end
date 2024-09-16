@@ -1,0 +1,24 @@
+<!--{% extends "s_create.html" %}
+{% block content %}
+   <center>
+    <p>Username not found. Please try again.</p>
+   </center>
+ {% endblock %}-->
+
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+</head>
+<body>
+    <center>
+        <H1>Could not make Student Account</H1> <br>
+    </center>
+    <br>
+    <p>Username not found. Please try again</p>
+    <br>
+    <center>
+        <a href="{{ url_for('s_login') }}">Login</a>
+    </center>
+</body>
+</html>

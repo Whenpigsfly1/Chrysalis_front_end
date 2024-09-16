@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>s_home</title>
+    <script src="{{url_for('static', filename='s_home.js')}}"></script>
+</head>
+<body>
+    
+<!--
+    <form method="POST" action="">
+        <center>
+            <H1> Assigned videos</H1> <br>
+            <label for="selected_video">Go to:</label>
+            <br>
+              {% for row in unfinished_video_filenames %}
+              Video <input type="button" value={{row[1]}}>
+              <br>
+              {% endfor %}
+            </select> <br>
+        </center>
+        <br>
+        <br>
+    </form>
+
+
+  <center>
+        <H1> Assigned videos</H1> <br>
+
+        {% for element in unfinished_video_filenames %}
+            <a href="/video{{element[1]}}">Video {{element[1]}}</a>
+             <br>
+             <div class="questions" style="display:none"> 
+             </div>
+        {% endfor %}
+
+    </center>
+
+-->
+    <center>
+        <H1> Assigned videos</H1> <br>
+
+        {% for element in unfinished_video_filenames %}
+            Video {{element[1]}}
+             <br>
+        {% endfor %}
+    </center>
+    <br>
+
+    <div id="popup" style="display:none">
+        <form method="POST" action="" id="form">
+           <center>
+               <label for="popup">Popup Question:</label>
+               <input type="text" name="popup"/>
+               <br>
+           </center>
+       </form>
+       <br>
+       </div>
+
+    <form method="POST" action="">
+            <center>
+                <label for="selected_video">Go to:</label>
+                <select name="selected_video" id="selected_video">
+                  {% for row in unfinished_video_filenames %}
+                  <option value={{row[1]}}>Video {{row[1]}}</option>
+                  {% endfor %}
+                </select> <br>
+                <br>
+                <input type = "submit">
+            </center>
+            <br>
+            <br>
+    </form>
+
+    <br>
+    <br>
+    <center>
+        <a href="{{ url_for('s_all_videos') }}">View all videos</a>
+    </center>
+    <br>
+    <br>
+    <center>
+        <div id="logout">
+        <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </center>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+    <script src="{{url_for('static', filename='videos.js')}}"></script>
+</head>
+<body>
+    <p>Video {{ video_number }}</p>
+    <video width="320" height="240" controls class="video" id="video">
+        <source src="/static/{{url}}" type="video/mp4">
+        Your browser does not support the video tag.
+     </video>
+     <br>
+   
+     <div id="questions" style="display:none">
+       <!--<form method="POST" action="">
+            <center>
+               
+                <label for="video">Video Number:</label>
+                <input type="text" name="video" value="{{video_number}}" readonly/>
+                <br>
+
+                <label for="q1">Question 1:</label><br>
+                <input type="radio" name="q1" value="Option A">Option A<br>
+                <input type="radio" name="q1" value="Option B">Option B<br>
+                <input type="radio" name="q1" value="Option C">Option C<br>
+
+                <label for="q2">Question 2:</label><br>
+                <input type="radio" name="q2" value="Option D">Option D<br>
+                <input type="radio" name="q2" value="Option E">Option E<br>
+                <input type="radio" name="q2" value="Option F">Option F<br>
+
+                <label for="q3">Question 3:</label><br>
+                <input type="radio" name="q3" value="Option G">Option G<br>
+                <input type="radio" name="q3" value="Option H">Option H<br>
+                <input type="radio" name="q3" value="Option I">Option I<br>
+
+                Notes:
+                <input type="text" name ="notes" value="test"/>
+                <br>
+            
+                <input type = "submit">
+            </center>
+        </form>-->
+        
+
+        <form method="POST" action="" id="form">
+            <center>
+               
+                <label for="video">Video Number:</label>
+                <input type="text" name="video" value="{{video_number}}" readonly/>
+                <br><br>
+
+                <label for="q1"><b>1. {{questions[0]}}</b></label><br><br>
+                <input type="radio" name="q1" value="{{questions[1]}}">{{questions[1]}}<br>
+                <input type="radio" name="q1" value="{{questions[2]}}">{{questions[2]}}<br>
+                <input type="radio" name="q1" value="{{questions[3]}}">{{questions[3]}}<br>
+                <input type="radio" name="q1" value="{{questions[4]}}">{{questions[4]}}<br><br>
+
+                <label for="q2"><b>2. {{questions[5]}}</b></label><br>
+                <input type="radio" name="q2" value="{{questions[6]}}">{{questions[6]}}<br>
+                <input type="radio" name="q2" value="{{questions[7]}}">{{questions[7]}}<br>
+                <input type="radio" name="q2" value="{{questions[8]}}">{{questions[8]}}<br>
+                <input type="radio" name="q2" value="{{questions[9]}}">{{questions[9]}}<br><br>
+
+                <label for="q3"><b>3. {{questions[10]}}</b></label><br><br>
+                <input type="radio" name="q3" value="{{questions[11]}}">{{questions[11]}}<br>
+                <input type="radio" name="q3" value="{{questions[12]}}">{{questions[12]}}<br>
+                <input type="radio" name="q3" value="{{questions[13]}}">{{questions[13]}}<br>
+                <input type="radio" name="q3" value="{{questions[14]}}">{{questions[14]}}<br><br>
+
+                Notes:
+                <input type="text" name ="notes" value="test"/>
+                <br>
+    
+                <input type = "submit">
+            </center>
+        </form>
+
+        <a href ="/s_home">Home</a>
+
+         <!--<div id="supplemental">
+            <h3>Additional resources</h3>
+            <a href="/static/{{questions[15]}}">Worksheet 1</a>
+         </div>-->
+
+     </div>
+</body>
+</html>

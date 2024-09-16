@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+    <script src="{{url_for('static', filename='videos.js')}}"></script>
+</head>
+<body>
+    <video width="320" height="240" controls class="video" id="video">
+        <source src={{ url_for('static', filename="cells.mp4") }} type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div id="questions" style="display:none">
+        <form method="POST" action="">
+            <center>
+               
+                <label for="video">Video Number:</label>
+                <input type="text" name="video" value="2" readonly/>
+                <br>
+
+                <label for="q1">Question 1:</label><br>
+                <input type="radio" name="q1" value="Option A">Option A<br>
+                <input type="radio" name="q1" value="Option B">Option B<br>
+                <input type="radio" name="q1" value="Option C">Option C<br>
+
+                <label for="q2">Question 2:</label><br>
+                <input type="radio" name="q2" value="Option D">Option D<br>
+                <input type="radio" name="q2" value="Option E">Option E<br>
+                <input type="radio" name="q2" value="Option F">Option F<br>
+
+                <label for="q3">Question 3:</label><br>
+                <input type="radio" name="q3" value="Option G">Option G<br>
+                <input type="radio" name="q3" value="Option H">Option H<br>
+                <input type="radio" name="q3" value="Option I">Option I<br>
+
+                Notes:
+                <input type="text" name ="notes"/>
+                <br>
+            
+                <input type = "submit">
+                </center>
+        </form>
+        
+     </div>
+</body>

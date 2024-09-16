@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assign Videos</title>
+</head>
+<body>
+    <form method="POST" action="">
+    <center>
+        <H1>Assign video</H1> <br>
+        <label for="assigned_video">Video:</label>
+        <select name="assigned_video" id="assigned_video">
+          {% for row in videos %}
+          <option value='{{row[0]}}'> Video {{row[0]}}</option>
+          {% endfor %}
+        </select> <br>
+        <input type = "submit">
+    </center>
+    <br>
+    <br>
+    <center>
+      <a href="{{ url_for('exit_student') }}">Exit</a>
+      <br>
+      <a href="{{ url_for('logout') }}">Logout</a>
+  </center>
+</form>
+</body>
+</html>

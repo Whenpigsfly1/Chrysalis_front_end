@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+</head>
+<body>
+    <form method="POST" action="">
+    <center>
+        <H1>Student Login - {{ school }}</H1> <br>
+        <label for="teacher">Teacher:</label>
+        <select name="teacher" id="teacher">
+             {% for row in teachers %}    
+                <option value={{ row[0] }}>{{ row[0] }}</option>
+             {% endfor %}
+        </select><br>
+        Username <input type = "text" name= "username"/> <br>
+        Password&nbsp;&nbsp;<input type = "password" name = "password" /> <br>
+        <input type = "submit">
+    </center>
+    </form>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="bottom">
+    <center>
+        
+    </center>
+    <br>
+    <br>
+    <center>
+        <a href="{{ url_for('s_create') }}">Create account</a>
+    </center>
+    </div>
+
+</body>
+</html>
